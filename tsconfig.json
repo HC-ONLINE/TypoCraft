@@ -6,9 +6,16 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     }
   },
-  "include": ["src", "astro.config.mjs"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src",
+    "astro.config.mjs"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
