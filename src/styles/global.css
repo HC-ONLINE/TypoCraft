@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Fonts */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Crimson Pro", Georgia, ui-serif, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-headline: "Epilogue", ui-sans-serif, sans-serif;
+
+  /* Shared tokens */
+  --color-primary: #006c49;
+  --color-surface: #f8f9fa;
+  --color-on-surface: #191c1d;
+  --color-outline: #6c7a71;
+  --color-outline-variant: #bbcabf;
+}
+
+/* ──────────────────────────────────────────────
+   GLASS NAV (shared)
+────────────────────────────────────────────── */
+.glass-nav {
+  background: rgba(248, 249, 250, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.22);
+}
+.glass-nav-dark {
+  background: rgba(13, 17, 23, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Custom scrollbar */
+.custom-scroll::-webkit-scrollbar { width: 4px; }
+.custom-scroll::-webkit-scrollbar-track { background: transparent; }
+.custom-scroll::-webkit-scrollbar-thumb { background: #bbcabf; border-radius: 10px; }
+.custom-scroll-dark::-webkit-scrollbar-thumb { background: #30363d; }
+
+/* ──────────────────────────────────────────────
+   THEME: MANUSCRIPT
+────────────────────────────────────────────── */
+.theme-manuscript {
+  --bg: #fcf5e5;
+  --surface: #faf0dc;
+  --on-bg: #191c1d;
+  --accent: #a43a3a;
+  --accent-dim: #c96060;
+  --border: #d6ccb2;
+  --muted: #7a6a55;
+  --editor-bg: #1a1208;
+  --editor-text: #e8d5a3;
+  --editor-accent: #d4975a;
+  --editor-comment: #7a6a55;
+  --code-bg: #f0e8d0;
+}
+
+.theme-manuscript .workspace-bg {
+  background-color: #fcf5e5;
+  background-image: radial-gradient(#e5dcc5 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.prose-manuscript > p:first-of-type::first-letter {
+  float: left;
+  font-size: 3.5rem;
+  line-height: 0.6;
+  margin-top: 4px;
+  margin-right: 6px;
+  margin-left: 0;
+  padding: 0;
+  font-family: "Crimson Pro", serif;
+  font-weight: 700;
+  color: #a43a3a;
+}
+
+/* ──────────────────────────────────────────────
+   THEME: MODERNIST
+────────────────────────────────────────────── */
+.theme-modernist {
+  --bg: #f8f9fa;
+  --surface: #ffffff;
+  --on-bg: #191c1d;
+  --accent: #006c49;
+  --accent-dim: #10b981;
+  --border: #e1e3e4;
+  --muted: #545f73;
+  --editor-bg: #111c2d;
+  --editor-text: #d8e3fb;
+  --editor-accent: #4edea3;
+  --editor-comment: #586377;
+  --code-bg: #e7e8e9;
+}
+
+.theme-modernist .workspace-bg {
+  background-color: #f0f2f4;
+}
+
+/* ──────────────────────────────────────────────
+   THEME: DEEP NIGHT
+────────────────────────────────────────────── */
+.theme-deepnight {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --on-bg: #f0f6fc;
+  --accent: #10b981;
+  --accent-dim: #4edea3;
+  --border: #30363d;
+  --muted: #8b949e;
+  --editor-bg: #0d1117;
+  --editor-text: #f8f8f2;
+  --editor-accent: #50fa7b;
+  --editor-comment: #6272a4;
+  --code-bg: #161b22;
+}
+
+.theme-deepnight .workspace-bg {
+  background-color: #0d1117;
+}
+
+/* Dracula syntax colors (used in Deep Night editor) */
+.syntax-kw  { color: #ff79c6; }
+.syntax-str { color: #f1fa8c; }
+.syntax-fn  { color: #50fa7b; }
+.syntax-cst { color: #bd93f9; }
+.syntax-cmt { color: #6272a4; }
+.syntax-txt { color: #f8f8f2; }
+
+/* ──────────────────────────────────────────────
+   PREVIEW MARKDOWN STYLES
+────────────────────────────────────────────── */
+
+/* Manuscript preview */
+.prose-manuscript h1 { font-family: "Crimson Pro", serif; font-size: 3rem; font-style: italic; font-weight: 700; color: #410005; text-align: center; margin-bottom: 2rem; line-height: 1.2; }
+.prose-manuscript h2 { font-family: "Crimson Pro", serif; font-size: 1.8rem; font-weight: 700; color: #410005; margin: 2rem 0 1rem; border-bottom: 1px solid #d6ccb2; padding-bottom: 0.5rem; }
+.prose-manuscript h3 { font-family: "Crimson Pro", serif; font-size: 1.4rem; font-style: italic; color: #a43a3a; margin: 1.5rem 0 0.75rem; }
+.prose-manuscript p  { font-family: "Crimson Pro", serif; font-size: 1.2rem; line-height: 1.9; color: #191c1d; margin-bottom: 1.25rem; text-align: justify; }
+.prose-manuscript strong { color: #410005; font-weight: 700; }
+.prose-manuscript em { font-style: italic; color: #5c3030; }
+.prose-manuscript blockquote { border-left: 3px solid #a43a3a; padding: 0.75rem 1.25rem; background: rgba(164,58,58,0.06); font-style: italic; color: #5c3030; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
+.prose-manuscript blockquote p { margin-bottom: 0; text-align: left; }
+.prose-manuscript code { font-family: "JetBrains Mono", monospace; font-size: 0.85em; background: #f0e8d0; color: #a43a3a; padding: 0.15em 0.4em; border-radius: 4px; }
+.prose-manuscript pre  { background: #1a1208; color: #e8d5a3; padding: 1.25rem; border-radius: 8px; overflow-x: auto; margin: 1.5rem 0; }
+.prose-manuscript pre code { background: none; color: inherit; padding: 0; }
+.prose-manuscript ul, .prose-manuscript ol { padding-left: 1.75rem; margin-bottom: 1.25rem; }
+.prose-manuscript li  { font-family: "Crimson Pro", serif; font-size: 1.15rem; line-height: 1.8; margin-bottom: 0.4rem; color: #191c1d; }
+.prose-manuscript ul li::marker { color: #a43a3a; }
+.prose-manuscript a   { color: #a43a3a; text-decoration: underline; text-underline-offset: 3px; }
+.prose-manuscript hr  { border-color: #d6ccb2; margin: 2rem 0; }
+
+/* Modernist preview */
+.prose-modernist h1 { font-family: "Epilogue", sans-serif; font-size: 3rem; font-weight: 800; color: #191c1d; letter-spacing: -0.03em; line-height: 0.95; margin-bottom: 1.5rem; }
+.prose-modernist h2 { font-family: "Epilogue", sans-serif; font-size: 1.75rem; font-weight: 700; color: #191c1d; margin: 2rem 0 1rem; }
+.prose-modernist h3 { font-family: "Epilogue", sans-serif; font-size: 1.25rem; font-weight: 600; color: #006c49; margin: 1.5rem 0 0.75rem; }
+.prose-modernist p  { font-family: "Crimson Pro", serif; font-size: 1.2rem; line-height: 1.75; color: #545f73; margin-bottom: 1.25rem; }
+.prose-modernist strong { color: #191c1d; font-weight: 700; }
+.prose-modernist em { font-style: italic; color: #191c1d; }
+.prose-modernist blockquote { border-left: 4px solid #10b981; padding: 0.75rem 1.25rem; background: rgba(16,185,129,0.05); color: #545f73; margin: 1.5rem 0; font-family: "Crimson Pro", serif; font-size: 1.15rem; }
+.prose-modernist blockquote p { margin-bottom: 0; }
+.prose-modernist code { font-family: "JetBrains Mono", monospace; font-size: 0.85em; background: #e7e8e9; color: #006c49; padding: 0.15em 0.4em; border-radius: 4px; }
+.prose-modernist pre  { background: #111c2d; color: #d8e3fb; padding: 1.25rem; border-radius: 8px; overflow-x: auto; margin: 1.5rem 0; }
+.prose-modernist pre code { background: none; color: inherit; padding: 0; }
+.prose-modernist ul, .prose-modernist ol { padding-left: 1.75rem; margin-bottom: 1.25rem; }
+.prose-modernist li  { font-family: "Crimson Pro", serif; font-size: 1.15rem; line-height: 1.75; margin-bottom: 0.35rem; color: #545f73; }
+.prose-modernist ul li::marker { color: #10b981; }
+.prose-modernist a   { color: #006c49; text-decoration: underline; text-underline-offset: 3px; }
+.prose-modernist hr  { border-color: #e1e3e4; margin: 2rem 0; }
+
+/* Deep Night preview */
+.prose-deepnight h1 { font-family: "Epilogue", sans-serif; font-size: 2.5rem; font-weight: 700; color: #f0f6fc; margin-bottom: 1.5rem; line-height: 1.15; }
+.prose-deepnight h2 { font-family: "Epilogue", sans-serif; font-size: 1.6rem; font-weight: 700; color: #f0f6fc; margin: 2rem 0 1rem; border-bottom: 1px solid #30363d; padding-bottom: 0.5rem; }
+.prose-deepnight h3 { font-family: "Epilogue", sans-serif; font-size: 1.2rem; font-weight: 600; color: #4edea3; margin: 1.5rem 0 0.75rem; }
+.prose-deepnight p  { font-family: "Inter", sans-serif; font-size: 1rem; line-height: 1.75; color: #8b949e; margin-bottom: 1.25rem; }
+.prose-deepnight strong { color: #f0f6fc; font-weight: 600; }
+.prose-deepnight em { font-style: italic; color: #bcc7de; }
+.prose-deepnight blockquote { border-left: 3px solid #10b981; padding: 0.75rem 1.25rem; background: rgba(16,185,129,0.08); color: #8b949e; margin: 1.5rem 0; }
+.prose-deepnight blockquote p { margin-bottom: 0; }
+.prose-deepnight code { font-family: "JetBrains Mono", monospace; font-size: 0.85em; background: #161b22; color: #50fa7b; padding: 0.15em 0.4em; border-radius: 4px; border: 1px solid #30363d; }
+.prose-deepnight pre  { background: #161b22; border: 1px solid #30363d; color: #f8f8f2; padding: 1.25rem; border-radius: 8px; overflow-x: auto; margin: 1.5rem 0; }
+.prose-deepnight pre code { background: none; border: none; color: inherit; padding: 0; }
+.prose-deepnight ul, .prose-deepnight ol { padding-left: 1.75rem; margin-bottom: 1.25rem; }
+.prose-deepnight li  { font-family: "Inter", sans-serif; font-size: 1rem; line-height: 1.75; margin-bottom: 0.35rem; color: #8b949e; }
+.prose-deepnight ul li::marker { color: #10b981; }
+.prose-deepnight a   { color: #4edea3; text-decoration: underline; text-underline-offset: 3px; }
+.prose-deepnight hr  { border-color: #30363d; margin: 2rem 0; }
